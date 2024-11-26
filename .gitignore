@@ -1,6 +1,7 @@
 /node_modules/
 /lib/
 /coverage/
+/temp/
 *.tgz
 package-lock.json
 pnpm-lock.yaml

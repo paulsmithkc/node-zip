@@ -3,6 +3,7 @@
 /test
 /coverage
 /data
+/temp
 /Makefile
 /CHANGELOG.md
 /tsconfig*
