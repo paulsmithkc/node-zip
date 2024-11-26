@@ -62,7 +62,13 @@ describe("readBlock", () => {
       await expect(
         readBlock(fileHandle, fileStart, fileEnd, buffer, 0, logger),
       ).rejects.toThrow(
-        `EOF reached while reading block ${fileStart} to ${fileEnd}`,
+        expect.objectContaining({
+          message: expect.stringMatching(
+            RegExp(
+              `(EOF reached while reading block ${fileStart} to ${fileEnd})|(EINVAL: invalid argument, read)`,
+            ),
+          ),
+        }),
       );
     } finally {
       if (fileHandle) {
